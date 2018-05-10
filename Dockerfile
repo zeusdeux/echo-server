@@ -6,7 +6,7 @@ ENV NODE_ENV ${nodeEnv:-development}
 ARG appPort
 ENV PORT ${appPort:-8484}
 
-EXPOSE ${PORT}
+EXPOSE $PORT
 
 WORKDIR /echo-websocket-server
 
