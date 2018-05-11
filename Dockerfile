@@ -3,10 +3,12 @@ FROM node:carbon
 ARG nodeEnv
 ENV NODE_ENV ${nodeEnv:-development}
 
-ARG appPort
-ENV PORT ${appPort:-8484}
+ENV DEBUG "echo:*"
 
-EXPOSE $PORT
+# internal websocket server port
+EXPOSE 8484
+# internal http server port
+EXPOSE 8585
 
 WORKDIR /echo-websocket-server
 
@@ -14,6 +16,6 @@ COPY . /echo-websocket-server
 
 RUN npm install
 
-RUN echo $NODE_ENV $PORT
+RUN echo $NODE_ENV $DEBUG
 
-ENTRYPOINT npm start
+ENTRYPOINT ["npm", "start"]

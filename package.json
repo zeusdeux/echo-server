@@ -1,25 +1,33 @@
 {
-  "name": "echo-websocket-server",
+  "name": "echo-server",
   "version": "1.0.0",
-  "description": "An secure echo websocket server using nginx for SSL termination",
+  "description": "An echo http and ws server using nginx for SSL termination in prod deployed using docker",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docker:build:prod": "docker build --build-arg nodeEnv=production --build-arg appPort=${PORT} -t zeusdeux/echo-server .",
+    "docker:build:prod": "docker build --build-arg nodeEnv=production -t zeusdeux/echo-server .",
     "docker:build:dev": "docker build -t zeusdeux/echo-server .",
-    "docker:run:prod": "docker run -d -p ${PORT}:8484 zeusdeux/echo-server",
-    "docker:run:dev": "docker run -it -p 8484:8484 zeusdeux/echo-server",
+    "docker:run:prod": "docker run -d -p ${PORT}:8585 zeusdeux/echo-server",
+    "docker:run:dev": "docker run -it -p 8585:8585 zeusdeux/echo-server",
     "dev": "npm run docker:build:dev && npm run docker:run:dev",
     "start": "./bin/server.js"
   },
   "keywords": [
     "websocket",
     "secure",
+    "http",
+    "express",
+    "ws",
+    "docker",
     "nginx"
   ],
   "author": "Mudit Ameta <zeusdeux@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "debug": "^3.1.0",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
     "ws": "^5.1.1"
   }
 }
