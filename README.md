@@ -113,6 +113,7 @@ server {
 - `docker system prune` - clean up dangling images and containers
 - `docker attach <container id>` - attach to a running container. Be aware that ctrl-c from here might kill your container too depending on the options you ran the cotainer with
 - `docker exec -it <container id> /bin/sh` - open up a terminal into the running container (not sure if this is the recommended way to do this though)
+- `docker kill <container id>` - kill the running container
 
 ## Some helpful nginx commands
 
