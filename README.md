@@ -6,6 +6,8 @@ An echo http and ws server using nginx for SSL termination in prod deployed usin
 
 I made this project only to play with docker and deploying a docker service behind nginx and using nginx for ssl termination.
 
+If you're looking for pristine code, this isn't the place. This was hacked together only to learn a few things.
+
 ## What does it do?
 
 This service runs in a docker container which uses node carbon LTS.
