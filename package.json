@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "docker:build:prod": "docker build --build-arg nodeEnv=production -t zeusdeux/echo-server .",
     "docker:build:dev": "docker build -t zeusdeux/echo-server .",
-    "docker:run:prod": "docker run -d -p ${PORT}:8585 zeusdeux/echo-server",
+    "docker:run:prod": "docker run -d -t --rm -p ${PORT}:8585 zeusdeux/echo-server",
     "docker:run:dev": "docker run -it -p 8585:8585 zeusdeux/echo-server",
     "dev": "npm run docker:build:dev && npm run docker:run:dev",
     "start": "./bin/server.js"
