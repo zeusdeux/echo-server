@@ -2,6 +2,9 @@
 
 An echo http and ws server using nginx for SSL termination in prod deployed using docker.
 
+Run for yourself `docker pull zeusdeux/echo-server && docker run -it -p 8585:8585 zeusdeux/echo-server`
+or try it at [https://echo.mudit.xyz](https://echo.mudit.xyz).
+
 ## Motivation
 
 I made this project only to play with docker and deploying a docker service behind nginx and using nginx for ssl termination.
