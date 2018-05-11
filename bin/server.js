@@ -16,7 +16,7 @@ const httpLog = debug('echo:http')
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use('/public', express.static(resolve(__dirname, '..', 'public')))
+app.use('/hello', express.static(resolve(__dirname, '..', 'public')))
 
 app.all('*', ({headers, subdomains, path, query, protocol, hostname, ip, originalUrl, method, body}, res) => {
   if (headers['x-forwarded-for']) {
