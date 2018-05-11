@@ -106,3 +106,15 @@ server {
     }
 }
 ```
+
+## Some helpful docker commands
+
+- `docker ps` - view list of running containers
+- `docker system prune` - clean up dangling images and containers
+- `docker attach <container id>` - attach to a running container. Be aware that ctrl-c from here might kill your container too depending on the options you ran the cotainer with
+- `docker exec -it <container id> /bin/sh` - open up a terminal into the running container (not sure if this is the recommended way to do this though)
+
+## Some helpful nginx commands
+
+- `nginx -t` - test nginx config. This is very _very_ useful
+- `nginx -s stop` - stop nginx. Though, I would recommend using your service manager for this. For e.g., `sudo service nginx restart/stop/start` on Ubuntu
