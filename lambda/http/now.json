@@ -1,0 +1,14 @@
+{
+  "name": "http-echo-server",
+  "version": 2,
+  "public": true,
+  "alias": ["http.zdx.cat", "www.http.zdx.cat"],
+  "builds": [
+    { "src": "http.js", "use": "@now/node" },
+    { "src": "index.html", "use": "@now/static" }
+  ],
+  "routes": [
+    { "src": "/hello", "dest": "/index.html" },
+    { "src": "/.*", "dest": "/http.js" }
+  ]
+}
